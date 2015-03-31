@@ -1,5 +1,6 @@
 $(document).ready(function(){
   window.dancers = [];
+  var conga = false;
 
   $(".addDancerButton").on("click", function(event){
     /* This function sets up the click handlers for the create-dancer
@@ -34,7 +35,17 @@ $(document).ready(function(){
   });
 
   $(".lineUpButton").on("click", function(event){
-    dancers.sort();
+    //dancers.sort();
+    if(conga) {
+      var position = "absolute";
+      conga = !conga;
+    } else {
+      var position = "static";
+      conga = !conga;
+    }
+    for (var i=0;i<dancers.length; i++) {
+      dancers[i].$node.css("position", position);
+    }
   });
 
   $(document).on("mouseover", "#liljon", function(){
