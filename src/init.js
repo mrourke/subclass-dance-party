@@ -32,10 +32,18 @@ $(document).ready(function(){
     dancers.push(dancer);
     $('body').append(dancer.$node);
   });
-  
-  $('#liljon').mouseover(function(){
-    $('#liljon').css("content", "url(images/liljonhover.jpg)");
+
+  $(".lineUpButton").on("click", function(event){
+    dancers.sort();
   });
+
+  $(document).on("mouseover", "#liljon", function(){
+    console.log('hello');
+    $(this).css("content", "url(images/liljonhover.jpg)");
+  });
+
   
 });
+
+
 
