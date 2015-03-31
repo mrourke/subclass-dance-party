@@ -38,8 +38,11 @@ $(document).ready(function(){
   });
 
   $(document).on("mouseover", "#liljon", function(){
-    console.log('hello');
     $(this).css("content", "url(images/liljonhover.jpg)");
+  });
+
+  $(document).on("mouseleave", "#liljon", function(){
+    $(this).css("content", "url(images/liljon.jpg)");
   });
 
   

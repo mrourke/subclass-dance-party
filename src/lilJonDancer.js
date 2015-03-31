@@ -4,6 +4,7 @@ var makeLilJonDancer = function(top, left, timeBetweenSteps){
   this.$node.attr("id", "liljon");
   // we plan to overwrite the step function below, but we still want the superclass step behavior to work,
   // so we must keep a copy of the old version of this function
+  this.bounce = 0;
 
 };
 
@@ -18,15 +19,14 @@ makeLilJonDancer.prototype.step = function(){
   // See http://api.jquery.com/category/effects/ for this and
   // other effects you can use on a jQuery-wrapped html tag.
   //this.$node.toggle();
-  var bounce = 0;
   var topStr = this.$node.css('top');
   var top = parseFloat(topStr.slice(0,topStr.length-3));
-  if (bounce) {
-    this.$node.attr('top', ("" + (top+10) + "px"));
-    bounce++;
+  if (this.bounce) {
+    this.$node.css('top', ("" + (top+10) + "px"));
+    this.bounce--;
   } else {
-    this.$node.attr('top', ("" + (top-10) + "px"));
-    bounce--;
+    this.$node.css('top', ("" + (top-10) + "px"));
+    this.bounce++;
   }
 };
 
