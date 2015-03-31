@@ -3,7 +3,11 @@ body, html{
 }
 body{
   margin: 0px;
-  background-color:#444;
+  height: 100%;
+  width: 100%;
+  /*background-color:#555;*/
+  background-image: url("images/partydancefloor.jpg");
+  background-size:;
   font-size: 18px;
 }
 body, a:link, a:visited, a:active{
@@ -20,8 +24,21 @@ body, a:link, a:visited, a:active{
 .title{
   background-color: #777;
 }
-.dancer{
+.dancer#blinkyDancer{
   border:10px solid red;
   border-radius:10px;
   position:absolute;
+}
+.dancer#liljon{
+  border:15px solid black;
+  position:absolute;
+  content: url("images/sax.gif");
+
+}
+.dancer#rickastley{
+  padding:10px 20px 10px 20px;
+  border:20px solid orange;
+  border-radius:10px;
+  position:absolute;
+  content: url("/images/sax.gif");
 }
