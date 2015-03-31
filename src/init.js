@@ -22,14 +22,20 @@ $(document).ready(function(){
 
     // make a dancer with a random position
 
-    debugger;
+    
     var dancer = new dancerMakerFunction(
 
-      $("body").height() * Math.random(),
-      $("body").width() * Math.random(),
+      $("body").height() * Math.random() * 0.8,
+      $("body").width() * Math.random() * 0.8,
       Math.random() * 1000
     );
+    dancers.push(dancer);
     $('body').append(dancer.$node);
   });
+  
+  $('#liljon').mouseover(function(){
+    $('#liljon').css("content", "url(images/liljonhover.jpg)");
+  });
+  
 });
 

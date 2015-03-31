@@ -35,7 +35,7 @@ body, a:link, a:visited, a:active{
   content: url("images/liljon.jpg");
 
 }
-.dancer#Hammer{
+.dancer#hammer{
   position:absolute;
   content: url("images/hammer.gif");
 }
