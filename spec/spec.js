@@ -35,76 +35,75 @@ describe("blinkyDancer", function() {
   });
 });
 
-describe("lilJohnDancer", function() {
+describe("lilJonDancer", function() {
 
-  var lilJohnDancer;
+  var lilJonDancer;
   var timeBetweenSteps = 100;
   var clock;
 
   beforeEach(function() {
     clock = sinon.useFakeTimers();
-    lilJohnDancer = new makeLilJohnDancer (10, 20, timeBetweenSteps);
+    lilJonDancer = new makeLilJonDancer (10, 20, timeBetweenSteps);
   });
 
   it("should have a jQuery $node object", function(){
-    expect(lilJohnDancer.$node).to.be.an.instanceof(jQuery);
+    expect(lilJonDancer.$node).to.be.an.instanceof(jQuery);
   });
 
   it("should have a step function that makes its node blink", function() {
-    sinon.spy(lilJohnDancer.$node, 'toggle');
-    lilJohnDancer.step();
-    expect(lilJohnDancer.$node.toggle.called).to.be.true;
+    sinon.spy(lilJonDancer.$node, 'toggle');
+    lilJonDancer.step();
+    expect(lilJonDancer.$node.toggle.called).to.be.true;
   });
 
   describe("dance", function(){
     it("should call step at least once per second", function(){
-      //debugger;
-      sinon.spy(lilJohnDancer, "step");
-      expect(lilJohnDancer.step.callCount).to.be.equal(0);
+      sinon.spy(lilJonDancer, "step");
+      expect(lilJonDancer.step.callCount).to.be.equal(0);
       clock.tick(timeBetweenSteps); // ? it seems an extra tick is necessary...
       clock.tick(timeBetweenSteps);
 
-      expect(lilJohnDancer.step.callCount).to.be.equal(1);
+      expect(lilJonDancer.step.callCount).to.be.equal(1);
 
       clock.tick(timeBetweenSteps);
-      expect(lilJohnDancer.step.callCount).to.be.equal(2);
+      expect(lilJonDancer.step.callCount).to.be.equal(2);
     });
   });
 });
 
-describe("rickAstleyDancer", function() {
+describe("hammerDancer", function() {
 
-  var rickAstleyDancer;
+  var hamerDancer;
   var timeBetweenSteps = 100;
   var clock;
 
   beforeEach(function() {
     clock = sinon.useFakeTimers();
-    rickAstleyDancer = new makeRickAstleyDancer(10, 20, timeBetweenSteps);
+    hammerDancer = new makeHammerDancer(10, 20, timeBetweenSteps);
   });
 
   it("should have a jQuery $node object", function(){
-    expect(rickAstleyDancer.$node).to.be.an.instanceof(jQuery);
+    expect(hammerDancer.$node).to.be.an.instanceof(jQuery);
   });
 
   it("should have a step function that makes its node blink", function() {
-    sinon.spy(rickAstleyDancer.$node, 'toggle');
-    rickAstleyDancer.step();
-    expect(rickAstleyDancer.$node.toggle.called).to.be.true;
+    sinon.spy(hammerDancer.$node, 'toggle');
+    hammerDancer.step();
+    expect(hammerDancer.$node.toggle.called).to.be.true;
   });
 
   describe("dance", function(){
     it("should call step at least once per second", function(){
       //debugger;
-      sinon.spy(rickAstleyDancer, "step");
-      expect(rickAstleyDancer.step.callCount).to.be.equal(0);
+      sinon.spy(hammerDancer, "step");
+      expect(hammerDancer.step.callCount).to.be.equal(0);
       clock.tick(timeBetweenSteps); // ? it seems an extra tick is necessary...
       clock.tick(timeBetweenSteps);
 
-      expect(rickAstleyDancer.step.callCount).to.be.equal(1);
+      expect(hammerDancer.step.callCount).to.be.equal(1);
 
       clock.tick(timeBetweenSteps);
-      expect(rickAstleyDancer.step.callCount).to.be.equal(2);
+      expect(hammerDancer.step.callCount).to.be.equal(2);
     });
   });
 });
