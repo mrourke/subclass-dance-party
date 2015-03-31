@@ -24,18 +24,18 @@ body, a:link, a:visited, a:active{
 .title{
   background-color: #777;
 }
-.dancer#blinkyDancer{
+#blinkyDancer{
   border:10px solid red;
   border-radius:10px;
   position:absolute;
 }
-.dancer#liljon{
+#liljon{
   border:5px solid black;
   position:absolute;
   content: url("images/liljon.jpg");
 
 }
-.dancer#hammer{
+#hammer{
   position:absolute;
   content: url("images/hammer.gif");
 }
