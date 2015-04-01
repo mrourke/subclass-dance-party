@@ -22,11 +22,12 @@ makeLilJonDancer.prototype.step = function(){
   var topStr = this.$node.css('top');
   var top = parseFloat(topStr.slice(0,topStr.length-3));
   if (this.bounce) {
-    this.$node.css('top', ("" + (top+10) + "px"));
+    top = "" + (top+20) + "px";
     this.bounce--;
   } else {
-    this.$node.css('top', ("" + (top-10) + "px"));
+    top = "" + (top-20) + "px";
     this.bounce++;
   }
+  this.$node.animate({'top': top}, 150);
 };
 
