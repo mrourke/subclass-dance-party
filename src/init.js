@@ -39,11 +39,11 @@ $(document).ready(function(){
     
     if(conga) {
       var position = "absolute";
-      $('p').css({"margin-left": "0"});
+      $('p').css("margin-left", "0");
       conga = !conga;
     } else {
       var position = "static";
-      $('p').animate({"margin-left": "2000"}, 20000);
+      $('p').animate({"margin-left": String($("body").width()-10)}, 20000);
       conga = !conga;
     }
     for (var i=0;i<dancers.length; i++) {
